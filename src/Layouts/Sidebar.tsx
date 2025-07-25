@@ -12,9 +12,12 @@ const Sidebar_Navbar = () => {
           <div className="flex flex-col justify-center items-center">
             <img src="/logo-color.svg" alt="logoBrand.png" className="w-14" />
             <div className="flex flex-col gap-7 mt-4">
-              {DefaultIcons?.map(({ icon }) => {
+              {DefaultIcons?.map(({ icon }, index: number) => {
                 return (
-                  <i className="hover:bg-gray-300 cursor-pointer transition-all duration-300 p-2 rounded-full">
+                  <i
+                    key={index}
+                    className="hover:bg-gray-300 cursor-pointer transition-all duration-300 p-2 rounded-full"
+                  >
                     {icon}
                   </i>
                 );
