@@ -1,9 +1,9 @@
-import Sidebar_Navbar from "./Layouts/Sidebar";
+import Router_Pages from "./Routers/Router_Pages";
 
 function App() {
   return (
     <>
-      <Sidebar_Navbar />
+      <Router_Pages />
     </>
   );
 }
