@@ -25,7 +25,4 @@ export const DefaultIcons: dataType[] = [
     icon: <IoIosAddCircleOutline size={30} />,
   },
 
-  {
-    icon: <GrPowerReset size={30} />,
-  },
 ];
