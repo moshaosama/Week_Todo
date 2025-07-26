@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# Week_Todo 🗓️✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Weekly Task Management App** built with **React, Redux Toolkit, Context API, Hooks, and REST API**.  
+The app helps you organize tasks per day of the week, with features like create, edit, delete, and track task progress.  
+Modern UI using **react-icons** and responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- View tasks grouped by week days.
+- **CRUD operations**: Add, edit, delete tasks.
+- Manage global state with **Redux Toolkit**.
+- **Context API + Custom Hooks** for shared logic.
+- Dynamic **Dark/Light theme**.
+- API integration (Axios/Fetch).
+- Fully responsive design.
+- **Icons via react-icons**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🖼️ Screenshots
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+> Place your screenshots in `/public/screenshots` or `/assets/screenshots` and update the paths below.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Home Page  
+![Home Page](./public/screenshots/home.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Week View  
+![Week View](./public/screenshots/week.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Task Modal  
+![Task Modal](./public/screenshots/task-modal.png)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React 18
+- Redux Toolkit & React-Redux
+- Context API
+- React Hooks (useState, useEffect, useReducer, useContext, etc.)
+- react-icons
+- React Router (if applicable)
+- Axios or Fetch API
+- Tailwind CSS / Bootstrap (if used)
+
+**Backend (optional):**
+- Node.js + Express (or any REST API)
+- Redis / PostgreSQL / MongoDB (optional)
+
+---
+
+## 📂 Project Structure (Example)
+
