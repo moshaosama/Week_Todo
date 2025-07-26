@@ -10,7 +10,7 @@ const Sidebar_Navbar_Loader = WithLoader(Sidebar_Navbar);
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Sidebar_Navbar_Loader />,
+    element: <Sidebar_Navbar />,
     children: [
       {
         index: true,
