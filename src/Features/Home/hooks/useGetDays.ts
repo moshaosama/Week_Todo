@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { dayService } from "../../../Api/Days/DaysService";
 
 interface dataGetDays {
-  data: string[];
+  data: string[] | { dayName: string }[];
   message: string;
   statusbar: string;
 }
@@ -10,7 +10,7 @@ interface dataGetDays {
 const useGetDays = () => {
   const { data: Days } = useQuery<dataGetDays>({
     queryKey: ["getDay"],
-    queryFn: () => dayService.getData(5),
+    queryFn: () => dayService.getData(14),
   });
 
   return { Days };
