@@ -3,7 +3,11 @@ import { dayService } from "../../../Api/Days/DaysService";
 import useGetUser from "../../../Hooks/useGetUser";
 
 interface dataGetDays {
-  data: string[] | { dayName: string }[];
+  data: {
+    data: string[];
+    ids: string[];
+  };
+
   message: string;
   statusbar: string;
 }
