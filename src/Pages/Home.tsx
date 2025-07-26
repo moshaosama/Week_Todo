@@ -1,4 +1,4 @@
-import Inputs from "../Components/inputs";
+
 import Days from "../Features/Home/Components/Days";
 
 const Home = () => {
