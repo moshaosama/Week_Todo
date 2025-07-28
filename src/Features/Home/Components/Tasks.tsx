@@ -17,11 +17,11 @@ const Tasks = ({ day_id }: { day_id: number }) => {
     <>
       {Tasks?.data?.map((el, index) => {
         return (
-          <div key={index}>
+          <div key={index} >
             <div className="flex justify-between items-center group">
-              <div className="flex items-center gap-2">
+              <div className="flex w-40 items-center gap-2">
                 <input type="radio" />
-                <label>{el}</label>
+                <label className="truncate">{el}</label>
               </div>
               <div
                 onClick={() => handleTriggerEditTasks(index, day_id)}
@@ -38,7 +38,6 @@ const Tasks = ({ day_id }: { day_id: number }) => {
           </div>
         );
       })}
-
       <form>
         <input
           type="text"
