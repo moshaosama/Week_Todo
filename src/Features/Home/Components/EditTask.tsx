@@ -3,6 +3,7 @@ import { HiXMark } from "react-icons/hi2";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import useGetTaskByid from "../hooks/useGetTaskByid";
 import { useOpenEditTasksContext } from "../Context/openEditTasks";
+import useEditTask from "../hooks/useEditTask";
 
 const EditTask = ({
   day_id,
@@ -15,6 +16,7 @@ const EditTask = ({
 }) => {
   const { taskByid } = useGetTaskByid(day_id, task_id);
   const { handleTriggerEditTasks } = useOpenEditTasksContext();
+  const { handleEditTask, handleSubmit, register } = useEditTask();
   return (
     <>
       <div className=" backdrop-blur-[1px] bg-black/5 p-20  absolute top-0 left-0 w-full h-[100vh]">
@@ -37,13 +39,23 @@ const EditTask = ({
           </div>
           <hr className="h-[2px]  border-none bg-gray-300 mt-4 rounded-full" />
           <div className="m-10">
-            <form action="" className="flex flex-col justify-center  gap-5">
+            <form
+              onMouseLeave={handleSubmit((data) =>
+                handleEditTask(data, {
+                  day_id: day_id,
+                  task_id: task_id,
+                  index_db: index_num,
+                })
+              )}
+              className="flex flex-col justify-center  gap-5"
+            >
               <p className="flex  items-center gap-5">
                 <input type="checkbox" className="p-4" />
                 <input
                   className="text-5xl focus:outline-0 w-full"
                   type="text"
                   defaultValue={taskByid?.data?.[index_num]}
+                  {...register("task")}
                 />
               </p>
 
