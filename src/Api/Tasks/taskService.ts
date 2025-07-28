@@ -44,6 +44,24 @@ class TaskService extends ParentService {
       return thunkApi.rejectWithValue(err);
     }
   }
+
+  async EditTask(
+    data?: { day_id: number; task_id: number; task: string; index_db: number },
+    thunkApi?: any
+  ) {
+    try {
+      const response = await axios.put(
+        `http://localhost:3000/task/edit-task/${data?.day_id}/${data?.task_id}`,
+        {
+          task: data?.task,
+          index_db: data?.index_db,
+        }
+      );
+      return response.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
 }
 
 export const taskService = new TaskService();
