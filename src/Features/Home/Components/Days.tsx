@@ -8,20 +8,18 @@ const Days = () => {
     <>
       <div className="flex justify-between overflow-y-scroll h-[50vh]">
         {Days?.data?.data?.map((el: any, index: number) => (
-          <>
-            <div key={index} className="flex flex-col">
-              <div className="flex w-full gap-10 justify-between items-center group">
-                <div className="flex flex-col items-center gap-2">
-                  <h1 className="text-3xl font-semibold">{el || el.dayName}</h1>
-                  <p className="text-sm text-[grey]">July 26, 2025</p>
-                </div>
-                <div className="hidden group-hover:block cursor-pointer">
-                  <CgMoreVerticalAlt size={25} />
-                </div>
+          <div key={index} className="flex flex-col">
+            <div className="flex w-full gap-10 justify-between items-center group">
+              <div className="flex flex-col items-center gap-2">
+                <h1 className="text-3xl font-semibold">{el || el.dayName}</h1>
+                <p className="text-sm text-[grey]">July 26, 2025</p>
               </div>
-              <Tasks day_id={Number(Days?.data?.ids[index])} />
+              <div className="hidden group-hover:block cursor-pointer">
+                <CgMoreVerticalAlt size={25} />
+              </div>
             </div>
-          </>
+            <Tasks day_id={Number(Days?.data?.ids[index])} />
+          </div>
         ))}
       </div>
     </>
