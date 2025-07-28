@@ -22,6 +22,7 @@ const Days = () => {
           </div>
         ))}
       </div>
+      {/* <hr className="h-[2px]  border-none bg-gray-300 mt-4 rounded-full" /> */}
     </>
   );
 };
