@@ -30,6 +30,20 @@ class TaskService extends ParentService {
       return thunkApi.rejectWithValue(err);
     }
   }
+
+  async getTaskById(
+    data?: { day_id: number; task_id: number },
+    thunkApi?: any
+  ) {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/task/get-task-by-id/${data?.day_id}/${data?.task_id}`
+      );
+      return response.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
 }
 
 export const taskService = new TaskService();
