@@ -1,10 +1,12 @@
-
 import Days from "../Features/Home/Components/Days";
+import OpenEditTasksProvider from "../Features/Home/Context/openEditTasks";
 
 const Home = () => {
   return (
     <div className="w-[105pc]">
-      <Days />
+      <OpenEditTasksProvider>
+        <Days />
+      </OpenEditTasksProvider>
     </div>
   );
 };
