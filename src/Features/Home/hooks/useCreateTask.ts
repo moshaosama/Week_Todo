@@ -9,6 +9,7 @@ const useCreateTask = () => {
   const { mutate } = useMutation({
     mutationKey: ["createTask", user?.data?.[0]?.id],
     mutationFn: taskService.CreateData,
+    onSuccess: () => {},
   });
 
   const handleCreateTask = (data: any, day_id: number) => {
