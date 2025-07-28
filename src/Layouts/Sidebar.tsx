@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 const Sidebar_Navbar = () => {
   return (
     <>
-      <div className="flex gap-3 ">
+      <div className="flex gap-3 relative">
         <div className="p-4 flex flex-col justify-between h-[100vh] items-center w-20">
           <div className="flex flex-col justify-center items-center">
             <img src="/logo-color.svg" alt="logoBrand.png" className="w-14" />
