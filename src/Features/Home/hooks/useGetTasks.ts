@@ -16,6 +16,7 @@ const useGetTasks = (day_id: number) => {
     data: Tasks,
     isLoading,
     error,
+    refetch,
   } = useQuery<dataGetTasks>({
     queryKey: ["getTask", userId, day_id],
     queryFn: () =>
@@ -26,7 +27,7 @@ const useGetTasks = (day_id: number) => {
     enabled: !!userId,
   });
 
-  return { Tasks, isLoading, error };
+  return { Tasks, isLoading, error, refetch };
 };
 
 export default useGetTasks;
