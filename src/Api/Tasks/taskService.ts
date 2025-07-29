@@ -62,6 +62,17 @@ class TaskService extends ParentService {
       return thunkApi.rejectWithValue(err);
     }
   }
+
+  async GetDeatilsTask(task_id?: number, thunkApi?: any) {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/task/get-details-task/${task_id}`
+      );
+      return response.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
 }
 
 export const taskService = new TaskService();
