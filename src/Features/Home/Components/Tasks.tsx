@@ -4,6 +4,7 @@ import useGetTasks from "../hooks/useGetTasks";
 import EditTask from "./EditTask";
 import { useOpenEditTasksContext } from "../Context/openEditTasks";
 
+
 const Tasks = ({ day_id }: { day_id: number }) => {
   const { Tasks } = useGetTasks(day_id);
   const { handleCreateTask, handleSubmit, register } = useCreateTask();
@@ -13,11 +14,12 @@ const Tasks = ({ day_id }: { day_id: number }) => {
     selectedIndex,
     selectedDayid,
   } = useOpenEditTasksContext();
+
   return (
     <>
       {Tasks?.data?.map((el, index) => {
         return (
-          <div key={index} >
+          <div key={index}>
             <div className="flex justify-between items-center group">
               <div className="flex w-40 items-center gap-2">
                 <input type="radio" />
@@ -41,7 +43,7 @@ const Tasks = ({ day_id }: { day_id: number }) => {
       <form>
         <input
           type="text"
-          className="w-48 focus:outline-0 border-b-2 border-b-[gray]"
+          className="w-48 focus:outline-0 border-b-2 border-b-[#cfcfcf]"
           {...register("task", { required: true })}
           onMouseLeave={handleSubmit((data) => handleCreateTask(data, day_id))}
         />
