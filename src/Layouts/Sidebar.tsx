@@ -1,10 +1,11 @@
 import { CgMoreAlt } from "react-icons/cg";
-import { DefaultIcons } from "../Constants/Icons";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { CiSettings } from "react-icons/ci";
 import { Outlet } from "react-router-dom";
+import Icons from "../Constants/Icons";
 
 const Sidebar_Navbar = () => {
+  const { DefaultIcons } = Icons();
   return (
     <>
       <div className="flex gap-3 relative">
@@ -12,9 +13,10 @@ const Sidebar_Navbar = () => {
           <div className="flex flex-col justify-center items-center">
             <img src="/logo-color.svg" alt="logoBrand.png" className="w-14" />
             <div className="flex flex-col gap-7 mt-4">
-              {DefaultIcons?.map(({ icon }, index: number) => {
+              {DefaultIcons?.map(({ icon, onClick }, index: number) => {
                 return (
                   <i
+                    onClick={onClick}
                     key={index}
                     className="hover:bg-gray-300 cursor-pointer transition-all duration-300 p-2 rounded-full"
                   >
