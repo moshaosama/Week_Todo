@@ -4,6 +4,7 @@ import { customTaskService } from "../../../Api/CustomTask/customTaskService";
 interface CustomTasksData {
   data: {
     Title: string;
+    id: number;
   }[];
   message: string;
   statusbar: number;
