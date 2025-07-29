@@ -1,6 +1,7 @@
 import { CgMoreVerticalAlt } from "react-icons/cg";
 import useGetDays from "../hooks/useGetDays";
 import Tasks from "./Tasks";
+import CustomTask from "./CustomTask";
 
 const Days = () => {
   const { Days } = useGetDays();
@@ -22,7 +23,8 @@ const Days = () => {
           </div>
         ))}
       </div>
-      {/* <hr className="h-[2px]  border-none bg-gray-300 mt-4 rounded-full" /> */}
+      <hr className="h-[2px]  border-none bg-gray-300 mt-4 rounded-full" />
+      <CustomTask />
     </>
   );
 };
