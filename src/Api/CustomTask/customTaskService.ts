@@ -24,6 +24,18 @@ class CustomTaskService extends ParentService {
       return thunkApi.rejectWithValue(err);
     }
   }
+
+  async DeleteData(customTask_id?: number, thunkApi?: any) {
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/custom-task/delete-custom-task/${customTask_id}`
+      );
+
+      return response.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
 }
 
 export const customTaskService = new CustomTaskService();
