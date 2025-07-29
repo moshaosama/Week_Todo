@@ -1,14 +1,26 @@
+import { HiMiniEllipsisVertical } from "react-icons/hi2";
 import useGetCustomTask from "../hooks/useGetCustomTask";
+import { useState } from "react";
+import useDeleteCustomTask from "../hooks/useDeleteCustomTask";
 
 const CustomTask = () => {
   const { CustomTasks } = useGetCustomTask();
-  console.log(CustomTasks);
+  const { handleDeleteCustomTask } = useDeleteCustomTask();
+  const [isOpenSidebar, setIsOpenSidebar] = useState<null | number>(null);
+
+  const handleTriggerOpenSidebar = (id: number) => {
+    if (isOpenSidebar === null) {
+      setIsOpenSidebar(id);
+    } else {
+      setIsOpenSidebar(null);
+    }
+  };
 
   return (
     <div className="grid grid-cols-7 gap-4">
       {CustomTasks?.data?.map((el, index) => (
         <div key={index}>
-          <div>
+          <div className="flex justify-between items-center group relative">
             <div key={index}>
               <input
                 type="text"
@@ -16,6 +28,23 @@ const CustomTask = () => {
                 className="text-2xl font-bold p-2 w-full"
               />
             </div>
+            <div
+              onClick={() => handleTriggerOpenSidebar(el.id)}
+              className="hidden group-hover:block cursor-pointer"
+            >
+              <HiMiniEllipsisVertical size={25} />
+            </div>
+
+            {isOpenSidebar === el.id && (
+              <div
+                onClick={() => handleDeleteCustomTask(el.id)}
+                className="absolute top-10 left-40 p-2 rounded-xl bg-[#dadada] shadow-xl shadow-[gray] w-36"
+              >
+                <div className="hover:bg-white cursor-pointer p-2 rounded-xl">
+                  <h1>Delete</h1>
+                </div>
+              </div>
+            )}
           </div>
           <form>
             <input
