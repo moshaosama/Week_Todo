@@ -4,7 +4,6 @@ import useGetTasks from "../hooks/useGetTasks";
 import EditTask from "./EditTask";
 import { useOpenEditTasksContext } from "../Context/openEditTasks";
 
-
 const Tasks = ({ day_id }: { day_id: number }) => {
   const { Tasks } = useGetTasks(day_id);
   const { handleCreateTask, handleSubmit, register } = useCreateTask();
