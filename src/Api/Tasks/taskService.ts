@@ -73,6 +73,17 @@ class TaskService extends ParentService {
       return thunkApi.rejectWithValue(err);
     }
   }
+
+  async ClearAllTasksById(day_id: number, thunkApi?: any) {
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/task/delete-all-tasks/${day_id}`
+      );
+      return response.data;
+    } catch (err) {
+      return thunkApi.rejectWithValue(err);
+    }
+  }
 }
 
 export const taskService = new TaskService();
