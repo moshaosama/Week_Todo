@@ -38,7 +38,7 @@ const CustomTask = () => {
             {isOpenSidebar === el.id && (
               <div
                 onClick={() => handleDeleteCustomTask(el.id)}
-                className="absolute top-10 left-40 p-2 rounded-xl bg-[#dadada] shadow-xl shadow-[gray] w-36"
+                className="absolute top-10 left-40 p-2 rounded-xl bg-[#ebebeb] shadow-xl shadow-[gray] w-36"
               >
                 <div className="hover:bg-white cursor-pointer p-2 rounded-xl">
                   <h1>Delete</h1>
