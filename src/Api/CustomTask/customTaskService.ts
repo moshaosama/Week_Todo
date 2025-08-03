@@ -5,7 +5,7 @@ class CustomTaskService extends ParentService {
   async CreateData() {
     try {
       const response = await axios.post(
-        "http://localhost:3000/custom-task/create-custom-task"
+        "http://localhost:3001/custom-task/create-custom-task"
       );
 
       return response.data;
@@ -16,7 +16,7 @@ class CustomTaskService extends ParentService {
   async getData(_?: any, thunkApi?: any) {
     try {
       const response = await axios.get(
-        "http://localhost:3000/custom-task/get-custom-task"
+        "http://localhost:3001/custom-task/get-custom-task"
       );
 
       return response.data;
@@ -28,7 +28,7 @@ class CustomTaskService extends ParentService {
   async DeleteData(customTask_id?: number, thunkApi?: any) {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/custom-task/delete-custom-task/${customTask_id}`
+        `http://localhost:3001/custom-task/delete-custom-task/${customTask_id}`
       );
 
       return response.data;
