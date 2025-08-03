@@ -7,7 +7,7 @@ class AuthService {
   ) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/signup",
+        "http://localhost:3001/auth/signup",
         data
       );
 
@@ -20,7 +20,7 @@ class AuthService {
   async Login(data?: { Email: string; Password: string }, thunkApi?: any) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/login",
+        "http://localhost:3001/auth/login",
         data
       );
 
