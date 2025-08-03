@@ -8,7 +8,7 @@ class TaskService extends ParentService {
   ) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/task/create-task",
+        "http://localhost:3001/task/create-task",
         {
           task: data?.task,
           user_id: data?.user_id,
@@ -23,7 +23,7 @@ class TaskService extends ParentService {
   async getData(data?: { user_id: number; day_id: number }, thunkApi?: any) {
     try {
       const response = await axios.get(
-        `http://localhost:3000/task/get-task/${data?.user_id}/${data?.day_id}`
+        `http://localhost:3001/task/get-task/${data?.user_id}/${data?.day_id}`
       );
       return response.data;
     } catch (err) {
@@ -37,7 +37,7 @@ class TaskService extends ParentService {
   ) {
     try {
       const response = await axios.get(
-        `http://localhost:3000/task/get-task-by-id/${data?.day_id}/${data?.task_id}`
+        `http://localhost:3001/task/get-task-by-id/${data?.day_id}/${data?.task_id}`
       );
       return response.data;
     } catch (err) {
@@ -51,7 +51,7 @@ class TaskService extends ParentService {
   ) {
     try {
       const response = await axios.put(
-        `http://localhost:3000/task/edit-task/${data?.day_id}/${data?.task_id}`,
+        `http://localhost:3001/task/edit-task/${data?.day_id}/${data?.task_id}`,
         {
           task: data?.task,
           index_db: data?.index_db,
@@ -66,7 +66,7 @@ class TaskService extends ParentService {
   async GetDeatilsTask(task_id?: number, thunkApi?: any) {
     try {
       const response = await axios.get(
-        `http://localhost:3000/task/get-details-task/${task_id}`
+        `http://localhost:3001/task/get-details-task/${task_id}`
       );
       return response.data;
     } catch (err) {
@@ -77,7 +77,7 @@ class TaskService extends ParentService {
   async ClearAllTasksById(day_id: number, thunkApi?: any) {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/task/delete-all-tasks/${day_id}`
+        `http://localhost:3001/task/delete-all-tasks/${day_id}`
       );
       return response.data;
     } catch (err) {
