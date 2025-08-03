@@ -1,5 +1,5 @@
 import Days from "../Features/Home/Components/Days";
-import OpenEditTasksProvider from "../Features/Home/Context/openEditTasks";
+import OpenEditTasksProvider from "../Features/Home/Context/OpenEditTasks";
 import OpenSidebarDaysProvider from "../Features/Home/Context/OpenSidebarDays";
 
 const Home = () => {
