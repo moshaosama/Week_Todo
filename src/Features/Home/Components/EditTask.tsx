@@ -3,7 +3,7 @@ import { HiXMark } from "react-icons/hi2";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import useGetTaskByid from "../hooks/useGetTaskByid";
 import useEditTask from "../hooks/useEditTask";
-import { useOpenEditTasksContext } from "../Context/openEditTasks";
+import { useOpenEditTasksContext } from "../Context/OpenEditTasks";
 
 const EditTask = ({
   day_id,
