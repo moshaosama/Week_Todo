@@ -14,7 +14,7 @@ const Days = () => {
     <>
       <div className="flex justify-between overflow-y-scroll  h-[50vh]">
         {Days?.data?.data?.map((el: any, index: number) => (
-          <div key={index} className="flex relative flex-col">
+          <div key={index} className="flex flex-col">
             <div className="flex  w-full gap-10 justify-between items-center group">
               <div className="flex flex-col items-center gap-2">
                 <h1 className="text-3xl font-semibold">{el || el.dayName}</h1>
@@ -27,7 +27,9 @@ const Days = () => {
                 <CgMoreVerticalAlt size={25} />
               </div>
             </div>
-            <Tasks day_id={Number(Days?.data?.ids[index])} />
+            <div>
+              <Tasks day_id={Number(Days?.data?.ids[index])} />
+            </div>
 
             {isOpenSidebar === index && (
               <div className="absolute top-10 left-20 p-2 rounded-xl z-50 bg-[#ebebeb] shadow-xl shadow-[gray] w-36">
